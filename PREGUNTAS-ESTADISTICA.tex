@@ -1,0 +1,58 @@
+\documentclass[12 pt,letterpaper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\hspace{-0.7cm}14. La utilidad por la venta de cierto ariculo, en miles de soles, es una variable aleatoria con distribucion normal. En el 5\% de las ventas la utilidad ha sido menos que 6.71 mientras que el 1\% de las ventas ha sido mayor que 14.66. Si se realizan 16 operaciones de ventas.¿Cual es la probabilidad de que el promedio de la utilidad por cada operacion este entre \$10 000 y \$11 000?.\\[2ex]
+
+\hspace{-0.7cm}Planteamos el ejercicio:\\[2ex]
+
+\hspace{-0.7cm}X = utilidad\\[1ex]
+
+\hspace{-0.7cm}$P[z < \dfrac{6.71 - \mu}{\sigma}] = 0.05$\\[1ex]
+$-1.64 = \dfrac{6.71-\mu}{\sigma}$\\[1ex]
+$-1.64\sigma + \mu = 6.71$\\[1ex]
+$\mu = 9.733$\\[1ex]
+
+\hspace{-0.7cm}$P[z < \dfrac{14.66 - \mu}{\sigma}] = 0.99$\\[1ex]
+$2.33 = \dfrac{14.66-\mu}{\sigma}$\\[1ex]
+$2.33\sigma + \mu = 14.66$\\[1ex]
+$\sigma = 1.8742$\\[1ex]
+
+\hspace{-0.7cm}$P[10 \leq  \bar{X} \leq 11]$\\[1ex]
+$P[z \leq  2.58] - P[z \leq  0.44]$\\[1ex]
+$0.995 - 0.67 = 0.325$\\[15ex]
+
+\hspace{-0.7cm}15. La vida útil en meses de una batería es una variable aleatoria X con distribución exponencial de parámetro $\beta$ tal que, P[X$>$5/X$>$2]=$e^{-0.6}$.\\[2ex]
+
+\hspace{-0.7cm}En este ejercicio usaremos las formulas de distribucion exponencial:\\[2ex]
+
+\hspace{-0.7cm}$\mu = 1/ \lambda$\\[2ex]
+$\sigma = 1/ \lambda^2$\\[2ex]
+$F(x) = 1-e^{-\lambda x}$\\[2ex]
+
+\hspace{-0.7cm}Entonces reemplazando en $F(x) = 1-e^{-\lambda x}$:\\[2ex]
+
+\hspace{-0.7cm}$\dfrac{1-[1-e^{- \beta (5)}]}{1-[1-e^{- \beta (2)}]} = e^{-0.6}$\\[2ex]
+$\dfrac{e^{-5 \beta}}{e^{-2 \beta}} = e^{-0.6}$\\[2ex]
+
+\hspace{-0.7cm}$\beta = 0.2$\\[2ex]
+$\mu = 1/\beta = 1/0.2 = 5$\\[2ex]
+$\sigma = 1/ \beta ^2 = 1/0.2^2 = 25$\\[2ex]
+
+\hspace{-0.7cm}Entonces la funcion de densidad seria:\\[2ex]
+
+\hspace{-0.7cm}$f(x) = 0.2e^{-0.2x} \ si \  x > 0 \  ; \  0 \  si \  x \le 0 $\\[30ex]
+
+\hspace{-0.7cm}16. En cierta poblacion de matrimonios el peso en kilogramos de esposos y esposas se distribuye normalmente N(80,100) Y N(64,69) respectivamente y son independientes. Si se eligen 25 matrimonios al azar de esa poblacion, calcular la probabilidad de que la media de los pesos sea a lo mas 137 kg.\\[2ex]
+
+\hspace{-0.7cm}Esposos: X $->$ N(80,100)\\[1ex]
+Esposas: Y $->$ N(64,69)\\[1ex]
+matrimonios M = X + Y $->$ N(80+64,100+69)\\[1ex]
+n = 25\\[1ex]
+P[$\bar{M}$ $<$ 137]\\[1ex]
+$P[\dfrac{\bar{M} - \mu}{\sigma / \sqrt{n}} < \dfrac{137-144}{\sqrt{169/25}}] = P(z < -2.69) = 0.0036 $\\[2ex]
+
+
+\end{document}

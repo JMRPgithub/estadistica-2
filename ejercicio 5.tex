@@ -1,0 +1,54 @@
+\documentclass[12pt,a4paper,openany]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{multirow} 
+\usepackage[width=0.00cm, left=3.00cm, right=2.50cm, top=3.00cm, bottom=2.50cm]{geometry}
+\begin{document}
+	\begin{enumerate}[5]
+		\item la demanda diaria de un profucto puede ser: 0,1,2,3,4 con probabilidades respectivas: 0.3 0.3 0.2 0.1 0.1.
+		\begin{enumerate}
+			\item describa el modelo de probabilidad de la demanda promedio de 36 dias
+			\item ¿que probabilidad hay de que la demanda promedio de 36 dias este entre 1 y 2 inclusive?
+		\end{enumerate}
+		sol:
+		\begin{enumerate}
+			\item 
+			\begin{table}[htbp]
+				\begin{center}
+					\begin{tabular}{|l|l|l|}
+						\hline
+						x & f(x) & xf(x)\\
+						\hline \hline \hline
+						0 & 0.3 & 0.0 \\ \hline
+						1 & 0.3 & 0.3 \\ \hline
+						2 & 0.2 & 0.4 \\ \hline
+						3 & 0.1 & 0.3 \\ \hline
+						4 & 0.1 & 0.4 \\ \hline
+					\end{tabular}
+					\caption{tabla 1.}
+					\label{tabla:sencilla}
+				\end{center}
+			\end{table}
+			
+			\[
+			\sum xf(x)=1.4 
+			\]
+			
+			\[
+			\sum x^2f(x)-u^2=sqrt(2.44)
+			\]
+			respuesta a:
+			N(1.4,sqrt(2.44)/36)
+			\item 
+			P(1 \le  x \le 2) = P( x \le 2)-P( x \le 1)\\
+			= P( x-u/0.26 \le 2-1.4)-P( x-u \le 1-1.4/0.26)\\
+			=0.98928 - 0.06178
+		\end{enumerate}
+	\end{enumerate}
+	
+
+\end{document}
