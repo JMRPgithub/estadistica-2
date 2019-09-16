@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage{inputenc}
+
+\title{Trabajo estadistica}
+ \author{ 
+ Anccasi Garcia, Roy\\ 
+ \texttt{27182301} \\ 
+ \and 
+alumno 1\\ 
+ \texttt{Dalquerre Garcia, Luis} \\ 
+ \texttt{27180119} 
+\and 
+alumno 2\\ 
+ \texttt{Auucapuclla Barrientos, Paul} \\ 
+ \texttt{27170502} 
+\and 
+ alumno 3\\ 
+ \texttt{Robles Garibay, Bill} \\ 
+ \texttt{27180108} 
+\and 
+alumno 4\\ 
+ \texttt{Zamudio Castro, Antony} \\ 
+ \texttt{27170110} 
+\and 
+alumno 5\\ 
+ \texttt{Huaman Landa Leonel} \\ 
+ \texttt{27180701} 
+} 
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+
+\begin{document}
+\maketitle
+1. Un taller tiene 5 empleados. Los salarios diarios en dolares de cada uno de ellos seon: 5, 7, 8, 10, 10\\
+a) Determine la media y la varianza de la poblacion\\
+\begin{table}[htb]
+\centering
+\begin{tabular}{| p{2.2cm}| p{2.2cm} |}
+\hline
+\multicolumn{2}{|c|}{Salarios} \\
+\hline
+$x_{i}$ & valor\\\hline
+$x_{1}$ & 5 \\ \hline
+$x_{2}$ & 7 \\ \hline
+$x_{3}$ & 8 \\ \hline
+$x_{4}$ & 10 \\ \hline
+$x_{5}$ & 10 \\ \hline
+\end{tabular}
+\caption{Tabla de salarios.}
+\end{table}
+
+Hallamos la media
+$$\bar{x}=  \displaystyle\sum_{i=1}^n\frac{x_{i}}{n}=\frac{x_{1}+x_{2}+x_{3}+x_{4}+x_{5}}{n}=\frac{5+7+8+10+10}{5}=\frac{40}{5}$$
+tenemos que , $\bar{x}=8$\\
+   Para la varianza
+$$\sigma^2=\displaystyle\sum_{i=1}^n\frac{(x_{i}-\bar{x})^2 x}{n}=\frac{(x_{1}-\bar{x})^2+(x_{2}-\bar{x})^2+(x_{3}-\bar{x})^2+(x_{4}-\bar{x})^2+(x_{5}-\bar{x})^2}{n}$$ 
+$$=\frac{(5-8)^2+(7-8)^2+(8-8)^2+(10-8)^2+(10-8)^2}{5}=\frac{9+1+0+4+4}{5}=\frac{18}{5}=3.6$$
+tenemos que , $\sigma^2=3.6$
+
+
+
+3.Si $\bar{x}$ denota la media de la muestra aleatoria $x_{1},x_{2},..,x_{9}$ de tamano 9 escogida de la poblacion (X) normal $N(6,6^2)$.\\
+a)Describa la deistribucion de probabilidades de la variable $ \bar{X}$\\
+b)Halle el percentil 80 de la distribucion de  $ \bar{X}$\\
+$$P( \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}\leq \frac{k-\mu}{\frac{\sigma}{\sqrt{n}}} )=0.8$$
+$$P( \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}\leq \frac{k-6}{\frac{6}{\sqrt{9}}} )=0.8$$
+teniendo, $$ \frac{k-6}{\frac{6}{\sqrt{9}}} =0.84$$
+$$ \frac{k-6}{2} =0.84$$
+$$ k-6 =1,68$$, $$ k =7,68$$
+c)Si Y=3X-5, calcular P[$\bar{Y}>28$].\\
+entonces, $$P[\bar{Y}>28]=P[3\bar{X}-5>28]=P[3\bar{X}>33]=P[\bar{X}>11]=1-P[\bar{X}\leq11]$$
+$$=1-P( \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}\leq \frac{11-6}{\frac{6}{\sqrt{9}}} )=1-P( Z\leq 2,5 )=1-0.9938=0.0062$$
+
+4. Una compania agroindustrial ha logrado establcer el siguiente modelo de probabilidad discreta de los sueldos(X) en cientos de dolares de su personal:
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+         x & 1 &2 & 3& 4& 5  \\ \cline{1-6}
+$f(x)=P[X=x]$& 0.1 &0.2 & 0.4&0.2&0.1\\ \cline{1-6}
+
+\end{tabular}
+\caption{Sueldos en cientos de dolares.}
+\label{tabla:final}
+\end{table}
+Si de esta pobalcion de sueldos se toman 30 sueldos al azar.\\
+a) Halle la media y la varianza de la media muestral.
+\begin{table}[htb]
+\centering
+\begin{tabular}{| p{2.2cm}| p{2.2cm} | p{2.2cm} | p{2.2cm} |}
+\hline
+$x_{i}$ & f(x)& xf(x)& $x^2f(x)$\\ \hline
+1 & 0.1 & 0.1&  0.1\\ \hline
+2 & 0.2 & 0.4 & 0.8\\ \hline
+3 & 0.4 & 1.2 & 3.6\\ \hline
+4 & 0.2 & 0.8& 3.2\\ \hline
+5 & 0.1 & 0.5& 2.5\\ \hline
+\end{tabular}
+\caption{xf(x).}
+\end{table}
+
+Entonces para calcular $\mu$, $$\lambda=\displaystyle\sum_{i=1}^nx_{i}f(x_{1})=0.1+0.4+1.2+0.8+0.5=3$$
+Para la varianza, $$\sigma^2_{x}=\displaystyle\sum_{i=1}^n(x_{i})^2-\mu^2=0.1+0.8+3.6+3.2+2.5-9= 10.2-9=1.2$$\\
+entonces,  $$\sigma^2_{\bar{x}}=\frac{\sigma^2_{x}}{n}=\frac{1,2}{30}=0.04$$
+
+b) Calcule la probabilidad de que la media muestral este entre 260 y 330 dolares.//
+Recoredemos que los sueldos estan en base 100, entonces debemos hallar, $P(2.6\leq  \bar{x}\leq  3.3)$//
+$$P(2.6\leq  \bar{x}\leq  3.3)=P( \bar{x}\leq  3.3 )-P(\bar{x}\leq2.6  )$$
+$$=P( \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}\leq  frac{3.3-3}{0.2} )-P( \frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}\leq\frac{2.6-3}{0.2} )=P(Z\leq 1.5)-P(Z\leq -2)$$
+$$=0.9332-0.0183 =0.9149$$
+
+
+\end{document}
