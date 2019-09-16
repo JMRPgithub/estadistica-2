@@ -1,0 +1,384 @@
+%\documentclass[12pt,a4paper]{report}
+\documentclass[DIV=calc,paper=a4,fontsize=11pt,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\renewcommand{\baselinestretch}{1.3}
+\usepackage[autostyle,spanish=mexican]{csquotes}
+
+\usepackage{amsmath,amsfonts,amsthm,amssymb,wasysym}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{tikz}
+\usepackage{pstricks} 
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{float} %flotador de label
+\usepackage{wrapfig} %Permite figuras o tablas que tienen texto
+\usepackage{shadow}
+\usepackage{fancyhdr} %definir pie de pagina y encabesados
+\usepackage{multicol}
+\usepackage[all]{xy}
+\usepackage{underoverlap}
+%\usepackage{asymptote}º
+\usepackage{environ}
+\usepackage{multicol}
+\usepgflibrary{shapes.misc}
+%\usepackage{MnSymbol}
+\usepackage{mathrsfs}
+\usepackage[left=3cm,right=3.7cm,top=2.8cm,bottom=2.7cm]{geometry}
+\usepackage{pdfpages}
+\usepackage[colorinlistoftodos, textwidth=3cm, shadow]{todonotes}
+ \definecolor{verdeoscuro}{RGB}{6,18,97}
+%%%encabezado y pie de pagina1
+\renewcommand{\footrulewidth}{2pt}  %regla de pie de pagina
+\pagestyle{fancy} %para que aparescaa regla orizontal
+\columnseprule=1.2pt %regla de columna
+\columnsep=25pt  %espacio en blando de la columna y texto
+%encabezado
+%\lhead[{\vspace*{-0.2cm}UNIVERSIDAD NACIONAL S.C.H} ]{\bf\red CÁLCULO II}
+\chead[]{}
+\rhead[\rightmark]{\bf \blue }
+%pie de pagina
+\definecolor{blue(pigment)}{RGB}{20,70,60}
+\lfoot[]{\bf }
+\cfoot[]{}
+\rfoot[]{\vspace*{-0.8cm}\fcolorbox{black}{white}{\Large\bfseries\color{blue(pigment)} {\thepage}}}
+\usetikzlibrary{shadows}                          %
+\newcommand{\preg}[1]{
+   \par\vspace{0.6em}\noindent                         %
+\begin{tikzpicture}[baseline=(X.base)]\node       %
+[drop shadow,fill=black,draw,very thin] (X) {\color{white} \textsf{\textbf{#1}}}; %
+\end{tikzpicture}\hspace{0.4cm}} 
+% ejemplo                          %
+\newcommand{\sombra}[1]{                          %
+\begin{tikzpicture}[baseline=(X.base)]\node       %
+[drop shadow,fill=white,draw,very thin] (X) {#1}; %
+\end{tikzpicture}} 
+\newcommand{\ejemplo}[1]{
+% \par\vspace{0.6em}\noindent   
+\begin{tikzpicture}
+\node[rounded rectangle, white, fill=black!70, draw]
+{\sf {Ejemplo} {\normalsize  #1}};
+\end{tikzpicture}
+}
+                                %
+%%                    %                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thesection}{\arabic{section}}
+%%%%%%%contador%%%%%%%%%%%%%%%%%
+\newcounter{contador}[section] %
+\setcounter{contador}{0}       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%definimos ambiente pregunta y solucion%%%%%%%%%%%%
+\usepackage{colortbl}                                    %
+%\makeatletter                                            %
+\definecolor{col}{RGB}{45,07,107}
+                    %
+\newcommand\sol{\noindent                                         %
+ \\[0.4em]
+  { \slshape \color{red}\textbf{Resolución}}%
+  \\[0.3em]\noindent  }
+                     %
+\makeatother
+                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%comandos particulares%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\af}{\alpha}
+\newcommand{\D}{\pmb{D}}
+\newcommand{\be}{\beta}
+\newcommand{\te}{\theta}
+\newcommand{\al}{\displaystyle}
+\newcommand{\med}{\scriptstyle}
+\newcommand{\imp}{\Rightarrow}
+\newcommand{\impp}{\Longleftrightarrow}
+\newcommand{\im}{\rightarrow}
+\newcommand{\p}{\cdot}
+\newcommand{\ca}{\cancel}
+\newcommand{\tri}{\therefore}
+\newcommand{\sen}{\mathop{\rm sen}\nolimits}
+\newcommand{\tg}{\mathop{\rm tg}\nolimits}\newcommand{\ct}{\mathop{\rm ctg}\nolimits}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\se}{\overline}
+\newcommand{\ang}{\measuredangle}
+\newcommand{\an}{\angle}
+\newcommand{\tr}{\triangle}
+\newcommand{\g}{^\circ}
+\newcommand{\spa}{\smallskip}
+\newcommand{\spac}{\medskip}
+\newcommand{\brazo}{\underbrace}
+\newcommand{\medi}{\mbox{m}\measuredangle}
+\newcommand{\f}{\frac}
+\newcommand{\dist}{\vspace{-0.5cm}}
+\newcommand{\rad}{\;\mbox{rad}}\newcommand{\bi}{\bullet\;\;}
+\newcommand{\Del}[1]{\left[#1\right]}
+\newcommand{\del}[1]{\left(#1\right)}
+\newcommand{\sect}[1]{\leftslice\scriptscriptstyle{#1}}
+\newcommand{\q}{\sqrt}
+\newcommand{\y}{\;\wedge\;}
+\newcommand{\oo}{\;\vee \;}
+\newcommand{\sii}{\;\Leftrightarrow\;}
+\newcommand{\pt}{\times}
+\newcommand{\s}{\sec\mathsf{h}}
+\newcommand{\ta }{\tan\mathsf{h}}
+\newcommand{\limt}{\lim_{n\rightarrow \infty}}
+\newcommand{\prt}{\partial}
+\newcommand{\M}{\geq}
+\newcommand{\m}{\leq}
+\newcommand{\vol}{\mathrm{Vol}}
+\newcommand{\area}{\mathrm{Area}}
+\newcommand{\yy}{\overline{y}}
+\newcommand{\vx}{\overline{x}}
+\newcommand{\hs}{\hspace{0.6cm}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\n}{\nabla}
+%\newcommand{\ejemplo}[1]{\color{white}\textsf{Ejemplo \yellow #1}}                                 
+\usepackage{amsmath}
+\usepackage{graphicx,tcolorbox}
+\definecolor{blue(pigment)}{RGB}{20,70,60}
+\definecolor{som}{RGB}{68,05,5}
+\usetikzlibrary{shadows} 
+%---------RTA-------------
+\newcommand{\ptas}[1]{
+\begin{flushright}
+\begin{tikzpicture}
+\node[rounded rectangle, white, fill=black!70, draw]
+{\sf {clave} {\normalsize #1}};
+\end{tikzpicture}
+\end{flushright}}
+
+% Estilos: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+%\usepackage[Sonny]{fncychap}
+\begin{document} 
+%%%portada%%%%%%%%%%%%
+\thispagestyle{empty}
+
+   % Sangría
+%%\input{caratula/cara}
+%%%%%%%%%%%%%%%%%%
+\newpage
+
+
+
+
+\begin{center}
+\large{\textcolor{black}{\textbf{\underline{\textit{EJERCICIOS DE ESTADÍSTICA II}}}}}
+\end{center}
+
+\textcolor{blue}{HUAMAN LANDA,Leonel Código: 27180701}\\
+
+\textcolor{red}{Ejercicio 17}\\
+
+Una empresa vende bloques de mármol cuyo peso se distribulle normalmente con una media de 200 kilogramos.
+
+a) Calcule la varianza del peso de los bloques, si la probabilidad de que el peso este entre 165 Kg y 235 Kg es 0.9876.\\
+
+b) ¿Qué tan grande debe ser la muestra para que haya una probabilidad de 0.9938 de que el peso medio de la muestra sea inferior a 205 Kg?\\
+
+\textcolor{red}{Solución: a)}
+
+$\mu = 200 Kilogramos$\\
+$\sigma = ?$\\
+$\textit{P}(165 < \overline{X} < 235) = 0.9876$\\
+
+$\textit{P}(165 < \overline{X} < 235) = \textit{P}(\dfrac{165 - \mu}{\sigma} < \dfrac{\overline{X} - \mu}{\sigma} < \dfrac{235 - \mu}{\sigma})$\\
+
+$\textit{P}(165 < \overline{X} < 235) = \textit{P}(\dfrac{165 - 200}{\sigma} < \textit{Z} < \dfrac{235 - 200}{\sigma})$\\
+
+$\textit{P}(165 < \overline{X} < 235) = \textit{P}(\dfrac{-35}{\sigma} < \textit{Z} < \dfrac{35}{\sigma})$\\
+
+$\textit{P}(165 < \overline{X} < 235) = \textit{P}(\textit{Z} < \dfrac{35}{\sigma}) - \textit{P}(\textit{Z} < \dfrac{-35}{\sigma})$\\
+
+$\textit{P}(165 < \overline{X} < 235) = \textit{P}(\textit{Z} < \dfrac{35}{\sigma}) - (1 -\textit{P}(\textit{Z} < \dfrac{35}{\sigma}))$\\
+
+$\textit{P}(165 < \overline{X} < 235) = 2\textit{P}(\textit{Z} < \dfrac{35}{\sigma}) - 1 $\\
+
+\textcolor{blue}{Como: $\textit{P}(165 < \overline{X} < 235) = 0.9876$}\\
+
+$0.9876 = 2\textit{P}(\textit{Z} < \dfrac{35}{\sigma}) - 1 $\\
+
+$1.9876 = 2\textit{P}(\textit{Z} < \dfrac{35}{\sigma})$\\
+
+$0.9938 = \textit{P}(\textit{Z} < \dfrac{35}{\sigma})$\\
+
+\textcolor{blue}{$\textit{Z} = 2.50,  \quad F(\textit{Z})$}\\
+
+$2.50 = \dfrac{35}{\sigma}$\\
+
+\colorbox{yellow}{$\sigma = 14$}
+
+
+\textcolor{red}{Solución: b)}\\
+
+$\textit{n} = ?, \quad \sigma = 14 , \quad \mu = 200$\\
+
+$\textit{P}(\overline{X} < 205) = 0.9938$\\
+
+$\textit{P}(\overline{X} < 205) = \textit{P}(\dfrac{\overline{X} - \mu}{\sigma/\sqrt{\textit{n}}} < \dfrac{205 - \mu}{\sigma/\sqrt{\textit{n}}})$\\
+
+$\textit{P}(\overline{X} < 205) = \textit{P}(\textit{Z} < \dfrac{205 - 200}{14/\sqrt{\textit{n}}})$\\
+
+$\textit{P}(\overline{X} < 205) = \textit{P}(\textit{Z} < \dfrac{5\sqrt{\textit{n}}}{14})$\\
+
+\textcolor{blue}{Como: $\textit{P}(\overline{X} < 205) = 0.9938$}\\
+
+$0.9938 = \textit{P}(\textit{Z} < \dfrac{5\sqrt{\textit{n}}}{14})$\\
+
+\textcolor{blue}{$\textit{Z} = 2.50, \quad F(\textit{Z})$}\\
+
+$2.50 = \dfrac{5\sqrt{\textit{n}}}{14}$\\
+
+$2.50 = \dfrac{5\sqrt{\textit{n}}}{14}$\\
+
+$\sqrt{\textit{n}} = 7$
+
+\colorbox{yellow}{$\textit{n} = 49$}\\
+
+
+
+
+
+
+\textcolor{red}{Ejercicio 18}\\
+
+La duración en horas de una marca de tarjeta electrónica  se distribulle exponencialmente con un promedio de 1000 horas.\\
+
+a) Halle el tamaño \textit{n} de la muestra de manera que sea 0.9544 la probabilidad de que su media muestral este entre 800 y 1200 horas.\\
+
+b) Si se obtiene una muestra aleatoria de 100 de esas tarjetas calcular la probabilidad que la duración media de la muestra sea superior a 1100 horas.\\
+
+
+\textcolor{red}{Solución: a)}\\
+
+$\mu = 1000 horas. \quad \textit{n} = ?$\\
+
+$\textit{P}(800 < \overline{X} < 1200) = 0.9544$\\
+
+Consideramos $\textit{E}(X) = \theta = 1000$\\
+
+$\sigma^{2} = 1 000 000 \quad \sigma = 1000$\\
+
+$\textit{P}(800 < \overline{X} < 1200)) = \textit{P}(\dfrac{800 - \mu}{\sigma/\sqrt{\textit{n}}} < \dfrac{\overline{X} - \mu}{\sigma/\sqrt{\textit{n}}} < \dfrac{1200 - \mu}{\sigma/\sqrt{\textit{n}}})$\\
+
+$\textit{P}(800 < \overline{X} < 1200)) = \textit{P}(\dfrac{800 - 1000}{1000/\sqrt{\textit{n}}} < \dfrac{\overline{X} - \mu}{\sigma/\sqrt{\textit{n}}} < \dfrac{1200 - 1000}{1000/\sqrt{\textit{n}}})$\\
+
+$\textit{P}(800 < \overline{X} < 1200) = \textit{P}(\dfrac{-200}{1000/\sqrt{\textit{n}}} < \textit{Z} < \dfrac{200}{1000/\sqrt{\textit{n}}})$\\
+
+$\textit{P}(800 < \overline{X} < 1200) = \textit{P}(-0.2\sqrt{\textit{n}} < \textit{Z} < 0.2\sqrt{\textit{n}})$\\
+
+
+$\textit{P}(800 < \overline{X} < 1200) = \textit{P}(\textit{Z} < 0.2\sqrt{\textit{n}}) - \textit{P}(\textit{Z} < -0.2\sqrt{\textit{n}})$\\
+
+$\textit{P}(800 < \overline{X} < 1200) = \textit{P}(\textit{Z} < 0.2\sqrt{\textit{n}}) - (1 -\textit{P}(\textit{Z} < 0.2\sqrt{\textit{n}}))$\\
+
+$\textit{P}(800 < \overline{X} < 1200) = 2\textit{P}(\textit{Z} < 0.2\sqrt{\textit{n}}) - 1 $\\
+
+\textcolor{blue}{Como: $\textit{P}(800 < \overline{X} < 1200) = 0.9544$}\\
+
+$0.9544 = 2\textit{P}(\textit{Z} < 0.2\sqrt{\textit{n}}) - 1 $\\
+
+$1.9544 = 2\textit{P}(\textit{Z} < 0.2\sqrt{\textit{n}})$\\
+
+$0.9772 = \textit{P}(\textit{Z} < 0.2\sqrt{\textit{n}})$\\
+
+\textcolor{blue}{$\textit{Z} = 2, \quad F(\textit{Z})$}\\
+
+$2 = 0.2\sqrt{\textit{n}}$\\
+
+$\sqrt{\textit{n}} = 10$\\
+
+\colorbox{yellow}{$\textit{n} = 100$}\\
+
+
+\textcolor{red}{Solución: b)}\\
+
+$\textit{n} = 100, \quad \mu = 1000, \quad \sigma = 1000 $\\
+
+$\textit{P}(\overline{X} \geqslant 1100) = ?$\\
+
+$\textit{P}(\overline{X} \geqslant 1100) = \textit{P}(\dfrac{\overline{X} - \mu}{\sigma/\sqrt{\textit{n}}} \geqslant \dfrac{1100 - \mu}{\sigma/\sqrt{\textit{n}}})$\\
+
+$\textit{P}(\overline{X} \geqslant 1100) = \textit{P}(\textit{Z} \geqslant \dfrac{1100 - 1000}{1000/\sqrt{\textit{100}}})$\\
+
+$\textit{P}(\overline{X} \geqslant 1100) = \textit{P}(\textit{Z} \geqslant \dfrac{100}{1000/10})$\\
+
+$\textit{P}(\overline{X} \geqslant 1100) = \textit{P}(\textit{Z} \geqslant \dfrac{100}{100})$\\
+
+$\textit{P}(\overline{X} \geqslant 1100) = \textit{P}(\textit{Z} \geqslant 1)$\\
+
+$\textit{P}(\overline{X} \geqslant 1100) = 1 - \textit{P}(\textit{Z} \leqslant 1)$\\
+
+\textcolor{blue}{Lectura de tabla. $\textit{P}(\textit{Z} \leqslant 1) = 0.8413$}\\
+
+$\textit{P}(\overline{X} \geqslant 1100) = 1 - 0.8413$\\
+
+\colorbox{yellow}{$\textit{P}(\overline{X} \geqslant 1100) = 0.1587$}\\
+
+
+\textcolor{red}{Ejercicio 19}\\
+
+Un procesador de alimentos envasa café en frascos de 400 gramos. Para controlar el proceso se selecionan 64 frascos cada hora. si su peso medio es inferior a un valor critico K, se detiene el proceso y se registra. En caso contrario, se continúa el operación sin detener el proceso. Determinar el valor de K de modo que haya una probabilidad de sólo 5\% de detener el proceso cuando está envasado a un promedio de 407.5 gramos con una desviación estándar de 2.5 gramos.\\
+
+
+\textcolor{red}{Solución:}\\
+
+$K = ?, \quad \textit{n} = 64, \quad \mu = 407.5, \quad \sigma = 2.5 $\\
+
+$\textit{P}(\overline{X} \leqslant \textit{K}) = 0.05$\\
+
+$\textit{P}(\overline{X} \leqslant \textit{K}) = \textit{P}(\dfrac{\overline{X} - \mu}{\sigma/\sqrt{\textit{n}}
+} \leqslant \dfrac{K - \mu}{\sigma/\sqrt{\textit{n}}})$\\
+
+$\textit{P}(\overline{X} \leqslant \textit{K}) = \textit{P}(Z \leqslant \dfrac{K - 407.5}{2.5/\sqrt{\textit{64}}})$\\
+
+$\textit{P}(\overline{X} \leqslant \textit{K}) = \textit{P}(Z \leqslant \dfrac{K - 407.5}{0.3125})$\\
+
+
+\textcolor{blue}{Como: $\textit{P}(\overline{X} \leqslant \textit{K}) = 0.05$}\\
+
+$0.05 = \textit{P}(Z \leqslant \dfrac{K - 407.5}{0.3125})$\\
+
+$\textit{P}(Z \leqslant \dfrac{K - 407.5}{0.3125}) = 0.05$\\
+
+\textcolor{blue}{$\textit{Z} = -1.64 \quad F(\textit{Z})$}\\
+
+$ \dfrac{K - 407.5}{0.3125} = -1.64$\\
+
+$ K - 407.5 = -0.5125$\\
+
+$ K  = 407.5 -0.5125$\\
+
+\colorbox{yellow}{$K = 406.987$}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
